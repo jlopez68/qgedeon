@@ -103,7 +103,7 @@ th {
   }
 
   .slider {
-    width: 150vh;
+    width: auto;
     height: auto;
     margin: auto;
     overflow: hidden;

@@ -404,7 +404,7 @@ export const imprimirNote = async (req, res) => {
 
               doc.fill("#115dc8")
                   .fontSize(20)
-                  .text("Gedeon Ritcher", {align: 'center'});
+                  .text("Gedeon Richter", {align: 'center'});
               doc.fill("#115dc8")
                   .fontSize(18)
                   .text("Resultados", {align: 'center'});
@@ -448,7 +448,7 @@ export const imprimirNote = async (req, res) => {
          
                        doc.fill("#7416c8")
                            .fontSize(8)
-                           .text("Quiniela Gedeon Ritcher", doc.footer.x, doc.footer.y + 10);
+                           .text("Quiniela Gedeon Richter", doc.footer.x, doc.footer.y + 10);
                    });
           // render tables
           doc.render();
@@ -483,7 +483,7 @@ export const imprimirNote1 = async (req, res) => {
 
               doc.fill("#115dc8")
                   .fontSize(20)
-                  .text("Gedeon Ritcher", {align: 'center'});
+                  .text("Gedeon Richter", {align: 'center'});
               doc.fill("#115dc8")
                   .fontSize(18)
                   .text("Posicion de los Jugadores", {align: 'center'});
@@ -522,7 +522,7 @@ export const imprimirNote1 = async (req, res) => {
          
                        doc.fill("#7416c8")
                            .fontSize(8)
-                           .text("Quiniela Gedeon Ritcher", doc.footer.x, doc.footer.y + 10);
+                           .text("Quiniela Gedeon Richter", doc.footer.x, doc.footer.y + 10);
                    });
           // render tables
           doc.render();
@@ -557,7 +557,7 @@ export const imprimirNote2 = async (req, res) => {
 
               doc2.fill("#115dc8")
                   .fontSize(20)
-                  .text("Gedeon Ritcher", {align: 'center'});
+                  .text("Gedeon Richter", {align: 'center'});
               doc2.fill("#115dc8")
                   .fontSize(18)
                   .text("Mi Pronostico", {align: 'center'});
@@ -601,7 +601,7 @@ export const imprimirNote2 = async (req, res) => {
          
                        doc2.fill("#7416c8")
                            .fontSize(8)
-                           .text("Quiniela Gedeon Ritcher", doc2.footer.x, doc2.footer.y + 10);
+                           .text("Quiniela Gedeon Richter", doc2.footer.x, doc2.footer.y + 10);
                    });
           // render tables
           doc2.render();
