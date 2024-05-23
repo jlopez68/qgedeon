@@ -34,14 +34,13 @@
 }
 
 #header {
-  @media(min-width:300px) {
+
     flex-wrap: nowrap;
     justify-content: flex-start;
     background-color: #10447f;
  /*   background-image: url(/img/banner.jpg); background-size: cover; background-repeat: no-repeat;*/
   }
 
-  } 
 #header img {
   width: 40%; 
 }

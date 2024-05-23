@@ -16,6 +16,8 @@ const PronosticoSchema = new mongoose.Schema(
     puntos: {type: Number, },
     status_partido:{ type: String, trim: true },
     usuario: {      type: String,          },
+    mapa1: { type:String,},
+    mapa2: { type:String,},
   },
   {
     timestamps: true,
