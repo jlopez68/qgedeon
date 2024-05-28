@@ -134,7 +134,7 @@ export const renderNotes = async (req, res) => {
         const us15 = user15._id
         await Note.findOneAndUpdate({email:req.user.email, grupo: "C",fecha: '27/06/2024',equipo1: "URUGUAY",equipo2: "BOLIVIA" }, { usuario: us15}) ;
 
-        const newjuego16 = new Note({email: req.user.email, status_partido: "C", numero:17,grupo: "C",fecha: '01/07/2024',mapa1: "/img/Bolivia.png", mapa2: "/img/Panama.png",equipo1: "BOLIVIA",equipo2: "PANAMA",resultado1: 0,resultado2: 0, puntos:0});
+        const newjuego16 = new Note({email: req.user.email, status_partido: "A", numero:17,grupo: "C",fecha: '01/07/2024',mapa1: "/img/Bolivia.png", mapa2: "/img/Panama.png",equipo1: "BOLIVIA",equipo2: "PANAMA",resultado1: 0,resultado2: 0, puntos:0});
         const juego16 = await newjuego16.save();
         const user16 = await Note.findOne({email: email, grupo: "C",fecha: '01/07/2024',equipo1: "BOLIVIA",equipo2: "PANAMA" }).lean();
         const us16 = user16._id
