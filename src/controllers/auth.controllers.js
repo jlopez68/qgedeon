@@ -4,7 +4,17 @@ import passport from "passport";
 export const renderSignUpForm = (req, res) => res.render("auth/signup");
 
 export const signup = async (req, res) => {
-  const { name, apellido, email, tipo_usuario} = req.body;
+
+
+  const { name, apellido, email, tipo_usuario, celular, ciudad, termsAndConditions} = req.body;
+
+  if (termsAndConditions != "on") {
+    req.flash("error_msg", "Debe Leer y aceptar los términos y condiciones .");
+    return res.redirect("/auth/signup");
+
+
+  }
+
   const userFound = await User.findOne({ email: req.body.email });
   if (userFound) {
     req.flash("error_msg", "El Email ya existe.");
@@ -14,7 +24,7 @@ export const signup = async (req, res) => {
   let errors = [];
 
 //  const { name, apellido, email, tipo_usuario} = req.body;
-  const newUser = new User({ name, apellido, email,  tipo_usuario}); 
+  const newUser = new User({ name, apellido, email,  tipo_usuario, celular, ciudad}); 
   newUser.tipo_usuario = "Jugador";
   newUser.password = "1234";
   newUser.puntos=0;

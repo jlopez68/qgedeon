@@ -12,7 +12,7 @@
         <form action="/auth/signup" method="POST">
 <div id="myTabContent" class="tab-content">
   <div class="tab-pane fade show active" id="home" role="tabpanel">
-      <div class="card-body">
+      <div class="card-body" style="font-size: 2rem">
           <div class="mb-3">
             <label for="email">Email:</label> 
             <input  type="email"  class="form-control bg-ligth"  name="email"  placeholder="Email"  value="{{email}}" />
@@ -26,14 +26,22 @@
             <input type="text" class="form-control bg-ligth" name="apellido" placeholder="Primer Apellido" value="{{apellido}}"/>
                               <input class="visually-hidden" type="number" name="puntos" value=0 readonly>
           </div>
+                              <div class="mb-3">
+            <label for="ciudad">Ciudad:</label>
+            <input type="text" class="form-control bg-ligth" name="ciudad" placeholder="ciudad" value="{{ciudad}}" required/>
+          </div>
+                              <div class="mb-3">
+            <label for="Celular">Celular:</label>
+            <input type="text" class="form-control bg-ligth" name="Celular" placeholder="celular" value="{{celular}}" required/>
+          </div>
       </div>
   </div>
 </div>
               <div class="form-termsAndConditions termsAndConditions" style="color: white;">
                 <input type="checkbox" id="termsAndConditions" name="termsAndConditions" onChange="comprobar(this);">
-                <label for="termsAndConditions">Acepto los </label>
-                <a href="/Estudios/AUTORIZACIÓN PARA EL TRATAMIENTO DE DATOS PERSONALES.pdf" target="_blank">Términos y Condiciones</a>
-                <p>de la política de protección de datos.</p>
+                <label for="termsAndConditions">He leído y acepto los términos y condiciones para el tratamiento de mis datos y uso de la información en: </label>
+                <a style="color: white;" href="https://gedeonrichter.com.ec/condiciones-de-uso" target="_blank">https://gedeonrichter.com.ec/condiciones-de-uso </a>
+               <a style="color: white;" href="https://gedeonrichter.com.ec/politica-de-privacidad" target="_blank">https://gedeonrichter.com.ec/politica-de-privacidad </a>
                 <p class="mensajeError"></p>
               </div>
 
