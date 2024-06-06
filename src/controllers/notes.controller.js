@@ -10,16 +10,18 @@ export const renderNotesqf = async (req, res) => {
   const nombre = req.user.name;
   const usua = req._id
   const tp = true;
-
-  res.render("notes/all-notes-qf", { nombre, tp});
+  const ad = false;
+  const ini = false;
+  res.render("notes/all-notes-qf", { nombre, tp, ad, ini});
 };
 
 export const renderNotessf = async (req, res) => {
   const nombre = req.user.name;
   const usua = req._id
   const tp = true;
-
-  res.render("notes/all-notes-sf", { nombre, tp});
+  const ad = false;
+  const ini = false;
+  res.render("notes/all-notes-sf", { nombre, tp, ad, ini});
 };
 
 export const renderNotes = async (req, res) => {
@@ -33,16 +35,18 @@ export const renderNotes = async (req, res) => {
       const nombre = req.user.name;
       const usua = req._id
       const tp = true;
+      const ad = false;
+      const ini = false;
       const notes1 = await Note.findOne({ email: email });
     //  console.log(notes1.email);
       if (!notes1) { 
-        const newjuego = new Note({ email: req.user.email, status_partido: "A", numero:1, grupo: "A",fecha: '20/06/2024',mapa1: "/img/Argentina.png", mapa2: "/img/Canada.png", equipo1: "ARGENTINA",equipo2: "CANADA",RESULTADO1: 0,RESULTADO2: 0});
+        const newjuego = new Note({ email: req.user.email, status_partido: "A", numero:1, grupo: "A",fecha: '20/06/2024',mapa1: "/img/Argentina.png", mapa2: "/img/Canada.png", equipo1: "ARGENTINA",equipo2: "CANADA",reesultado1: 0,resultado2: 0, puntos:0});
         const juego = await newjuego.save();
         const user = await Note.findOne({email: email, grupo: "A",fecha: '20/06/2024',equipo1: "ARGENTINA",equipo2: "CANADA" }).lean();
         const us = user._id
         await Note.findOneAndUpdate({email:req.user.email, grupo: "A",fecha: '20/06/2024',equipo1: "ARGENTINA",equipo2: "CANADA" }, { usuario: us }) ;
 
-        const newjuego1 = new Note({email: req.user.email, status_partido: "A", numero:2,grupo: "A",fecha: '21/06/2024',mapa1: "/img/Peru.png", mapa2: "/img/Chile.png", equipo1: "PERU",equipo2: "CHILE",RESULTADO1: 0,RESULTADO2: 0});
+        const newjuego1 = new Note({email: req.user.email, status_partido: "A", numero:2,grupo: "A",fecha: '21/06/2024',mapa1: "/img/Peru.png", mapa2: "/img/Chile.png", equipo1: "PERU",equipo2: "CHILE",resultado1: 0,resultado2: 0, puntos:0});
         const juego1 = await newjuego1.save();
         const user1 = await Note.findOne({email: email, grupo: "A",fecha: '21/06/2024',equipo1: "PERU",equipo2: "CHILE" }).lean();
         const us1 = user1._id
@@ -187,7 +191,7 @@ export const renderNotes = async (req, res) => {
         .lean();
         const puntos = 0;
          console.log("aqui si estoy")
-         res.render("notes/all-notes-pronos", { notes, nombre, puntos, tp} );
+         res.render("notes/all-notes-pronos", { notes, nombre, puntos, tp, ad, ini} );
       
       
       }
@@ -202,7 +206,7 @@ export const renderNotes = async (req, res) => {
       const notes = await Note.find({email: email})
         .sort({ date:"desc" })
         .lean();
-         res.render("notes/all-notes-pronos", { notes, nombre, puntos, posicion, tp} );
+         res.render("notes/all-notes-pronos", { notes, nombre, puntos, posicion, tp, ad, ini} );
     }      
 } 
 
@@ -210,12 +214,14 @@ else
 {
   const tp = false;
   const fm = false;
+  const ad = true;
+  const ini = false;
 //  const notes = await Note.find()
   const notes = await resultados.find()
   .sort({ date: "desc" })
   .lean();
 
-res.render("notes/all-notes", { notes , tp, fm });
+res.render("notes/all-notes", { notes , tp, ad, ini });
 };
 };
 
@@ -224,7 +230,8 @@ export const renderEditForm = async (req, res) => {
   const jue = req.user.status_partido;
   console.log(tip);
   if (tip == "Jugador"){  const tp = true;
-
+    const ad = false;
+    const ini = false;
 
     const fm = false;
     const note = await Note.findById(req.params.id).lean();
@@ -238,9 +245,11 @@ export const renderEditForm = async (req, res) => {
     else
   {
   const tp = false;
-  const fm = true;
+  const ad = true;
+  const ini = false;
+  
   const note = await resultados.findById(req.params.id).lean();
-  res.render("notes/edit-note", { note, tp, fm });
+  res.render("notes/edit-note", { note, tp, ad, ini });
 }
 
 

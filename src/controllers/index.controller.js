@@ -1,5 +1,4 @@
 export const renderIndex = (req, res) => {
-  res.render("index");
+  const ini = true;
+  res.render("index", {ini} );
 };
-
-
