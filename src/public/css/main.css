@@ -1,4 +1,6 @@
-
+.navbar .navbar-brand img {
+  width: 100%;
+}
 
 .logo {
   width: 20%;
@@ -98,7 +100,7 @@ th {
   }
 
   .container{
-    flex-direction: column-reverse;
+    flex-direction: row;
   }
 
   .slider {
