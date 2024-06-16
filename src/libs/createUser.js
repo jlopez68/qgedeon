@@ -5,40 +5,7 @@ export const createAdminUser = async () => {
   const userFound = await User.findOne({ email: "admin@localhost" });
 
   if (userFound) return;
-/*
-const createJuegos = () => {
-const listjuegos = [{
 
-
-    grupo: "A",fecha: '20/06/2024',equipo1: "ARGENTINA",equipo2: "CANADA",RESULTADO1: 0,RESULTADO2: 0},
-    {grupo: "A",fecha: '21/06/2024',equipo1: "PERU",equipo2: "CHILE",RESULTADO1: 0,RESULTADO2: 0},
-    {grupo: "A",fecha: '25/06/2024',equipo1: "PERU",equipo2: "CANADA",RESULTADO1: 0,RESULTADO2: 0},
-    {grupo: "A",fecha: '25/06/2024',equipo1: "CHILE",equipo2: "ARGENTINA",RESULTADO1: 0,RESULTADO2: 0},
-    {grupo: "A",fecha: '29/06/2024',equipo1: "ARGENTINA",equipo2: "PERU",RESULTADO1: 0,RESULTADO2: 0},
-    {grupo: "A",fecha: '29/06/2024',equipo1: "CANADA",equipo2: "CHILE",RESULTADO1: 0,RESULTADO2: 0},
-    {grupo: "B",fecha: '22/06/2024',equipo1: "ECUADOR",equipo2: "VENEZUELA",RESULTADO1: 0,RESULTADO2: 0},
-    {grupo: "B",fecha: '22/06/2024',equipo1: "MEXICO",equipo2: "JAMAICA",RESULTADO1: 0,RESULTADO2: 0},
-    {grupo: "B",fecha: '26/06/2024',equipo1: "ECUADOR",equipo2: "JAMAICA",RESULTADO1: 0,RESULTADO2: 0},
-    {grupo: "B",fecha: '26/06/2024',equipo1: "VENEZUELA",equipo2: "MEXICO",RESULTADO1: 0,RESULTADO2: 0},
-    {grupo: "B",fecha: '29/06/2024',equipo1: "JAMAICA",equipo2: "VENEZUELA",RESULTADO1: 0,RESULTADO2: 0},
-    {grupo: "B",fecha: '29/06/2024',equipo1: "MEXICO",equipo2: "ECUADOR",RESULTADO1: 0,RESULTADO2: 0},
-    {grupo: "C",fecha: '23/06/2024',equipo1: "USA",equipo2: "BOLIVIA",RESULTADO1: 0,RESULTADO2: 0},
-    {grupo: "C",fecha: '23/06/2024',equipo1: "URUGUAY",equipo2: "PANAMA",RESULTADO1: 0,RESULTADO2: 0},
-    {grupo: "C",fecha: '27/06/2024',equipo1: "PANAMA",equipo2: "USA",RESULTADO1: 0,RESULTADO2: 0},
-    {grupo: "C",fecha: '27/06/2024',equipo1: "URUGUAY",equipo2: "BOLIVIA",RESULTADO1: 0,RESULTADO2: 0},
-    {grupo: "C",fecha: '01/07/2024',equipo1: "BOLIVIA",equipo2: "PANAMA",RESULTADO1: 0,RESULTADO2: 0},
-    {grupo: "C",fecha: '01/07/2024',equipo1: "USA",equipo2: "URUGUAY",RESULTADO1: 0,RESULTADO2: 0},
-    {grupo: "D",fecha: '24/06/2024',equipo1: "COLOMBIA",equipo2: "PARAGUAY",RESULTADO1: 0,RESULTADO2: 0},
-    {grupo: "D",fecha: '24/06/2024',equipo1: "BRAZIL",equipo2: "COSTA RICA",RESULTADO1: 0,RESULTADO2: 0},
-    {grupo: "D",fecha: '28/06/2024',equipo1: "COLOMBIA",equipo2: "COSTA RICA",RESULTADO1: 0,RESULTADO2: 0},
-    {grupo: "D",fecha: '28/06/2024',equipo1: "PARAGUAY",equipo2: "BRAZIL",RESULTADO1: 0,RESULTADO2: 0},
-    {grupo: "D",fecha: '02/07/2024',equipo1: "COSTA RICA",equipo2: "PARAGUAY",RESULTADO1: 0,RESULTADO2: 0},
-    {grupo: "D",fecha: '02/07/2024',equipo1: "BRAZIL",equipo2: "COLOMBIA",RESULTADO1: 0,RESULTADO2: 0}
-]
-
-Juegos.insertMany(listjuegos)
-}
-createJuegos()*/
 
   const newUser = new User({username: "admin",name: 'Administrador',email: "admin@localhost",password: "1234",tipo_usuario: "Administrador"});
   const admin = await newUser.save();
@@ -62,9 +29,9 @@ createJuegos()*/
            const juego8 = await newjuego8.save();
              const newjuego9 = new Juegos({jugado:"N",numero:10,grupo: "B",fecha: '26/06/2024',equipo1: "VENEZUELA",equipo2: "MEXICO",RESULTADO1: 0,RESULTADO2: 0});
              const juego9 = await newjuego9.save();
-               const newjuego10 = new Juegos({jugado:"N",numero:11,grupo: "B",fecha: '29/06/2024',equipo1: "JAMAICA",equipo2: "VENEZUELA",RESULTADO1: 0,RESULTADO2: 0});
+               const newjuego10 = new Juegos({jugado:"N",numero:11,grupo: "B",fecha: '30/06/2024',equipo1: "JAMAICA",equipo2: "VENEZUELA",RESULTADO1: 0,RESULTADO2: 0});
                const juego10 = await newjuego10.save();
-                 const newjuego11 = new Juegos({jugado:"N",numero:12,grupo: "B",fecha: '29/06/2024',equipo1: "MEXICO",equipo2: "ECUADOR",RESULTADO1: 0,RESULTADO2: 0});
+                 const newjuego11 = new Juegos({jugado:"N",numero:12,grupo: "B",fecha: '30/06/2024',equipo1: "MEXICO",equipo2: "ECUADOR",RESULTADO1: 0,RESULTADO2: 0});
                  const juego11 = await newjuego11.save();
                const newjuego12 = new Juegos({jugado:"N",numero:13,grupo: "C",fecha: '23/06/2024',equipo1: "USA",equipo2: "BOLIVIA",RESULTADO1: 0,RESULTADO2: 0});
                const juego12 = await newjuego12.save();
