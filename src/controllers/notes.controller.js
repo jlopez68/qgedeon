@@ -549,7 +549,7 @@ export const imprimirNote1 = async (req, res) => {
                   .text("Gedeon Richter", {align: 'center'});
               doc.fill("#115dc8")
                   .fontSize(18)
-                  .text("Posicion de los Jugadores", {align: 'center'});
+                  .text("JUGADORES Y SU POSICION", {align: 'center'});
 
           });
 
@@ -564,6 +564,8 @@ export const imprimirNote1 = async (req, res) => {
                 {key: 'name', label: 'Nombre', align: 'left'},
                 {key: 'apellido', label: 'Apelido', align: 'left'},
                 {key: 'email', label: 'Email', align: 'left'},
+                {key: 'celular', label: 'Celular', align: 'left'},
+                {key: 'ciudad', label: 'Ciudad', align: 'left'},
                 {key: 'puntos', label: 'Puntos', align: 'center'},
 
               ],
