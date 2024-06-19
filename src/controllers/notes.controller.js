@@ -4,6 +4,22 @@ import Usuario from "../models/User.js"
 
 
 
+export const renderNotescodigo1 = async (req, res) => {
+
+  const nombre = req.user.name;
+  const email = req.user.email
+  const usua = req._id
+  const tp = true;
+  const ad = false;
+  const ini = false;
+   const a =   await Usuario.findOneAndUpdate({email: req.user.email}, {celular:req.body.celular});
+   console.log(a)
+        req.flash("success_msg", "Celular Actualizado");
+        return res.redirect("/notes");
+
+
+};
+
 
   
 export const renderNotesqf = async (req, res) => {
@@ -27,20 +43,23 @@ export const renderNotessf = async (req, res) => {
 export const renderNotes = async (req, res) => {
 
   console.log("tipo",req.user.tipo_usuario);
-console.log(req.user);
+
+
+
+
   const tip = req.user.tipo_usuario;
   const email = req.user.email;
-//  const celular = req.user.celular;
     if (tip == "Jugador"){
-  //    console.log(celular);
-   /*   if(celular == "null"){
-        req.flash("success_msg", "Favor Actualizar informacio de contacto");
-        res.redirect("/notes");
-
-      };*/
-      
-
-
+ /*      const celu = req.user.celular;
+       if (celu==null) {
+        const nombre = req.user.name;
+        const usua = req._id
+        const tp = true;
+        const ad = false;
+        const ini = false;
+        req.flash("success_msg", "Favor Actualizar el Numero Telefonico");
+        res.render("notes/pedircodigo2", { nombre, tp, ad, ini});
+       }*/
 
       const nombre = req.user.name;
       const usua = req._id

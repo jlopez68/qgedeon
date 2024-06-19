@@ -1,6 +1,6 @@
 import { Router } from "express";
 import {
-
+  renderNotescodigo1,
   renderNotes,
   renderNotesqf,
   renderNotessf,
@@ -27,7 +27,7 @@ router.get("/notessf", isAuthenticated, renderNotessf);
 
 // Edit Notes
 router.get("/notes/edit/:id", isAuthenticated, renderEditForm);
-
+router.post("/pedircodigo1", isAuthenticated, renderNotescodigo1);
 
 router.put("/notes/edit-note/:id", isAuthenticated, updateNote);
 
