@@ -12,7 +12,7 @@ export const renderNotescodigo1 = async (req, res) => {
   const tp = true;
   const ad = false;
   const ini = false;
-   const a =   await Usuario.findOneAndUpdate({email: req.user.email}, {celular:req.body.celular});
+   const a =   await Usuario.updateMany({email: req.user.email}, {celular:req.body.celular});
    console.log(a)
         req.flash("success_msg", "Celular Actualizado");
         return res.redirect("/notes");
@@ -43,15 +43,14 @@ export const renderNotessf = async (req, res) => {
 export const renderNotes = async (req, res) => {
 
   console.log("tipo",req.user.tipo_usuario);
-
-
-
-
   const tip = req.user.tipo_usuario;
   const email = req.user.email;
-    if (tip == "Jugador"){
- /*      const celu = req.user.celular;
-       if (celu==null) {
+  const celu = req.user.celular;
+  console.log(req.user.celular);
+  console.log(req.user);
+ 
+  if (tip == "Jugador"){
+       if (celu==0) {
         const nombre = req.user.name;
         const usua = req._id
         const tp = true;
@@ -59,7 +58,7 @@ export const renderNotes = async (req, res) => {
         const ini = false;
         req.flash("success_msg", "Favor Actualizar el Numero Telefonico");
         res.render("notes/pedircodigo2", { nombre, tp, ad, ini});
-       }*/
+       }
 
       const nombre = req.user.name;
       const usua = req._id

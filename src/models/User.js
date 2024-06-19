@@ -11,10 +11,10 @@ const UserSchema = new mongoose.Schema(
     password: { type: String, required: true },
     puntos: {type: Number },
     posicion: {type: Number },
-    cedular: {type:Number},
+    celular: {type:Number},
     ciudad: {type:String}
   },
-  { 
+  {   
     timestamps: true,
     versionKey: false,
   }
