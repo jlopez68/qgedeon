@@ -27,11 +27,21 @@ export const renderNotessf = async (req, res) => {
 export const renderNotes = async (req, res) => {
 
   console.log("tipo",req.user.tipo_usuario);
-
+console.log(req.user);
   const tip = req.user.tipo_usuario;
   const email = req.user.email;
+//  const celular = req.user.celular;
     if (tip == "Jugador"){
+  //    console.log(celular);
+   /*   if(celular == "null"){
+        req.flash("success_msg", "Favor Actualizar informacio de contacto");
+        res.redirect("/notes");
+
+      };*/
       
+
+
+
       const nombre = req.user.name;
       const usua = req._id
       const tp = true;
@@ -190,7 +200,6 @@ export const renderNotes = async (req, res) => {
         .sort({ date:"desc" })
         .lean();
         const puntos = 0;
-         console.log("aqui si estoy")
          res.render("notes/all-notes-pronos", { notes, nombre, puntos, tp, ad, ini} );
       
       
@@ -534,7 +543,7 @@ export const imprimirNote1 = async (req, res) => {
 
             const doc = new PdfkitConstruct1({
             size: 'letter',
-            margins: {top: 20, left: 5, right: 5, bottom: 20},
+            margins: {top: 20, left: 0, right: 0, bottom: 20},
             bufferPages: true});
 
             // set the header to render in every page
@@ -575,8 +584,8 @@ export const imprimirNote1 = async (req, res) => {
                   striped: true,
                   stripedColors: ["#f6f6f6", "#d6c4dd"],
                   cellsPadding: 10,
-                  marginLeft: 25,
-                  marginRight: 25
+                  marginLeft: 5,
+                  marginRight: 5
               });
 
              // set the footer to render in every page
