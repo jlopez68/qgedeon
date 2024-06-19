@@ -50,7 +50,7 @@ export const renderNotes = async (req, res) => {
   console.log(req.user);
  
   if (tip == "Jugador"){
-       if (celu==0) {
+       if (celu=="0") {
         const nombre = req.user.name;
         const usua = req._id
         const tp = true;
