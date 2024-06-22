@@ -390,7 +390,7 @@ export const updateNote = async (req, res) => {
 
          const puntousuario = await Usuario.findOne( {email: notes100.email}).lean()
          const puntuacion = puntousuario.puntos + punt;
-    //     const doc2 = await Usuario.updateOne({email: notes100.email},  {puntos:puntuacion});
+         const doc2 = await Usuario.updateOne({email: notes100.email},  {puntos:puntuacion});
 
 
         } 
