@@ -486,7 +486,7 @@ export const imprimirNote = async (req, res) => {
   .lean();
 
             const doc = new PdfkitConstruct({
-            size: 'letter',
+            size: 'tabloid',
             margins: {top: 20, left: 5, right: 5, bottom: 20},
             bufferPages: true});
 
@@ -565,7 +565,7 @@ export const imprimirNote1 = async (req, res) => {
   .lean();
 
             const doc = new PdfkitConstruct1({
-            size: 'letter',
+            size: 'tabloid',
             margins: {top: 20, left: 0, right: 0, bottom: 20},
             bufferPages: true});
 
@@ -641,7 +641,7 @@ export const imprimirNote2 = async (req, res) => {
   .lean();
 
             const doc2 = new PdfkitConstruct2({
-            size: 'letter',
+            size: 'tabloid',
             margins: {top: 20, left: 5, right: 5, bottom: 20},
             bufferPages: true});
 
