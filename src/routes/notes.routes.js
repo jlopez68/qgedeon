@@ -10,6 +10,7 @@ import {
   imprimirNote,
   imprimirNote1,
   imprimirNote2,
+  calcularposicion,
   renderVisualizarnotas
 } from "../controllers/notes.controller.js";
 
@@ -22,6 +23,7 @@ const router = Router();
 
 // Get All Notes
 router.get("/notes", isAuthenticated, renderNotes);
+router.get("/notesb", isAuthenticated, calcularposicion);
 router.get("/notesqf", isAuthenticated, renderNotesqf);
 router.get("/notessf", isAuthenticated, renderNotessf);
 
